@@ -6,7 +6,7 @@ export const StoreInfoSection: React.FC = () => {
   return (
     <section id="contact" className="py-14 px-4 bg-slate-900 text-white scroll-mt-20">
       <div className="max-w-7xl mx-auto space-y-10">
-        
+
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <span className="text-[10px] font-bold text-amber-300 uppercase tracking-widest bg-emerald-950 px-3 py-1 rounded-full border border-emerald-800">
             Showroom Location & Contact
@@ -20,11 +20,11 @@ export const StoreInfoSection: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          
+
           {/* Contact Details Panel */}
           <div className="lg:col-span-6 bg-emerald-950/60 border border-emerald-800/80 rounded-3xl p-6 sm:p-8 space-y-6 flex flex-col justify-between">
             <div className="space-y-6">
-              
+
               <div className="flex items-start gap-4">
                 <div className="p-3 bg-amber-400 text-slate-950 rounded-2xl shrink-0 font-bold">
                   <Building2 className="w-6 h-6" />
@@ -59,9 +59,6 @@ export const StoreInfoSection: React.FC = () => {
                   <p className="text-sm text-slate-200 font-medium">
                     {STORE_INFO.timing}
                   </p>
-                  <div className="inline-block bg-emerald-800/80 text-emerald-200 text-[10px] px-2.5 py-0.5 rounded-full font-bold uppercase mt-1">
-                    ● Open Today
-                  </div>
                 </div>
               </div>
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Ruler, Search, MessageSquare, ChevronRight } from 'lucide-react';
+import { Menu, X, Ruler, Send, MessageSquare, ChevronRight } from 'lucide-react';
 import { Logo } from './Logo';
 import type { CategoryFilter } from '../types';
 import { STORE_INFO } from '../data/storeData';
@@ -8,14 +8,14 @@ interface NavbarProps {
   activeCategory: CategoryFilter;
   onSelectCategory: (category: CategoryFilter) => void;
   onOpenSizeGuide: () => void;
-  onOpenSearch?: () => void;
+  onOpenInquiryForm?: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   activeCategory,
   onSelectCategory,
   onOpenSizeGuide,
-  onOpenSearch
+  onOpenInquiryForm
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -34,13 +34,21 @@ export const Navbar: React.FC<NavbarProps> = ({
     { id: 'sarees', label: 'RS Sarees', sectionId: 'sarees' },
   ];
 
+  const scrollToElement = (id: string, retries = 5) => {
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      } else if (retries > 0) {
+        scrollToElement(id, retries - 1);
+      }
+    }, 60);
+  };
+
   const handleNavClick = (id: CategoryFilter, sectionId: string) => {
     onSelectCategory(id);
     setMobileMenuOpen(false);
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    scrollToElement(sectionId);
   };
 
   const whatsappUrl = `https://wa.me/${STORE_INFO.whatsapp}?text=${encodeURIComponent('Hello RS SINCE 1977, I would like to inquire about your fabric & clothing catalog.')}`;
@@ -52,7 +60,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
 
-        {/* Brand Logo - Weaveify Style */}
+        {/* Brand Logo */}
         <div
           className="cursor-pointer flex items-center group"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -88,17 +96,18 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* Right Header Actions */}
         <div className="hidden sm:flex items-center space-x-3">
-          {onOpenSearch && (
+          {onOpenInquiryForm && (
             <button
-              onClick={onOpenSearch}
-              className="p-2.5 rounded-full text-slate-600 hover:text-[#004d28] hover:bg-emerald-50 transition-colors border border-slate-200"
-              title="Search Fabrics & Clothing"
+              onClick={onOpenInquiryForm}
+              className="px-4 py-2.5 rounded-full text-xs font-bold text-[#004d28] hover:bg-emerald-50 transition-colors border border-emerald-300 flex items-center gap-1.5 cursor-pointer shadow-2xs bg-emerald-50/60"
+              title="Open Inquiry Form Popup"
             >
-              <Search className="w-4 h-4" />
+              <Send className="w-3.5 h-3.5 text-amber-600" />
+              <span>Inquiry Form</span>
             </button>
           )}
 
-          {/* Weaveify Style Pill Button for WhatsApp */}
+          {/* WhatsApp Pill Button */}
           <a
             href={whatsappUrl}
             target="_blank"
@@ -112,12 +121,13 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* Mobile Menu Button */}
         <div className="flex sm:hidden items-center gap-2">
-          {onOpenSearch && (
+          {onOpenInquiryForm && (
             <button
-              onClick={onOpenSearch}
-              className="p-2 text-slate-700 bg-slate-100 rounded-lg border border-slate-200"
+              onClick={onOpenInquiryForm}
+              className="px-3 py-1.5 text-xs font-bold text-[#004d28] bg-emerald-50 rounded-lg border border-emerald-200 flex items-center gap-1"
             >
-              <Search className="w-4 h-4" />
+              <Send className="w-3.5 h-3.5 text-amber-600" />
+              <span>Inquiry</span>
             </button>
           )}
 
@@ -154,14 +164,27 @@ export const Navbar: React.FC<NavbarProps> = ({
             ))}
 
             <div className="pt-4 border-t border-slate-100 space-y-2">
+              {onOpenInquiryForm && (
+                <button
+                  onClick={() => {
+                    onOpenInquiryForm();
+                    setMobileMenuOpen(false);
+                  }}
+                  className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-emerald-50 text-[#004d28] border border-emerald-200 font-bold text-sm"
+                >
+                  <Send className="w-4 h-4 text-amber-600" />
+                  <span>Open Inquiry Form Popup</span>
+                </button>
+              )}
+
               <button
                 onClick={() => {
                   onOpenSizeGuide();
                   setMobileMenuOpen(false);
                 }}
-                className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-emerald-50 text-[#004d28] border border-emerald-200 font-bold text-sm"
+                className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-slate-50 text-slate-700 border border-slate-200 font-bold text-sm"
               >
-                <Ruler className="w-4 h-4 text-emerald-700" />
+                <Ruler className="w-4 h-4 text-slate-600" />
                 <span>View Full Size & Fabric Matrix</span>
               </button>
 

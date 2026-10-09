@@ -28,7 +28,7 @@ export const GENTS_PRODUCTS: Product[] = [
     fabricType: '100% Breathable Giza Cotton',
     description: '100% Breathable Giza Cotton & Micro-twill structured fit formal shirts crafted for executive elegance and day-long comfort.',
     features: ['100% Giza/Egyptian Cotton options', 'Wrinkle-resistant finish', 'Single & Double Cuff designs'],
-    image: '/shirt_product.jpg'
+    image: '/gents_suit_teal.jpg'
   },
   {
     id: 'g-1a',
@@ -52,7 +52,7 @@ export const GENTS_PRODUCTS: Product[] = [
     fabricType: 'Poly-Viscose Stretch Weave',
     description: 'Tailored slim and regular fit formal trousers featuring expandable comfort waistband and wrinkle-free stretch weave.',
     features: ['Poly-Viscose & Wool blend options', 'Flat front & Pleated styles', 'Durable pocket lining'],
-    image: '/trouser_product.jpg'
+    image: '/gents_trousers_formal.jpg'
   },
   {
     id: 'g-2a',
@@ -64,30 +64,30 @@ export const GENTS_PRODUCTS: Product[] = [
     fabricType: 'Cotton Stretch Flex Weave',
     description: 'Comfort-fit casual trousers and utility stretch pants designed for relaxed daily movement and effortless smart-casual pairing.',
     features: ['Breathable Cotton Stretch', 'Flex Waistband', 'Wrinkle-resistant fabric'],
-    image: '/trouser_product.jpg'
+    image: '/gents_trousers_casual.jpg'
   },
   {
     id: 'g-3',
-    name: 'STRETCH DENIM JEANS',
+    name: 'JEANS',
     price: '₹1,000 – ₹3,000/-',
     sizes: '28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48',
     category: 'Stretch Denim Collection',
     badge: 'Trending',
     fabricType: 'Heavyweight Flex Denim',
-    description: 'High-grade stretch denim jeans available in slim tapered, regular straight, and dark indigo washes.',
+    description: 'High-grade jeans available in slim tapered, regular straight, and dark indigo washes.',
     features: ['4-way stretch denim', 'Riveted stress points', 'Color-lock wash process'],
-    image: '/hero_gents.jpg'
+    image: '/gents_jeans_blue.jpg'
   },
   {
     id: 'g-4',
-    name: 'COTTON TWILL CHINOS',
+    name: 'COTTON TROUSERS',
     price: '₹1,000 – ₹2,500/-',
     sizes: '28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48',
     category: 'Smart Twill Chinos',
     fabricType: 'Peached Cotton Twill',
-    description: 'Versatile cotton twill chinos designed for smart casual workday meetings and weekend wear in classic earthy tones.',
+    description: 'Versatile cotton twill trousers designed for smart casual workday meetings and weekend wear in classic earthy tones.',
     features: ['Peached cotton finish', 'Flex waistband', 'Machine washable'],
-    image: '/trouser_product.jpg'
+    image: '/gents_trousers_cotton.jpg'
   },
   {
     id: 'g-5',
@@ -98,33 +98,44 @@ export const GENTS_PRODUCTS: Product[] = [
     fabricType: 'Combed Pique Cotton',
     description: 'Matte-finish pique cotton polo shirts and crew neck tees crafted with anti-pilling fabric.',
     features: ['100% Combed pique cotton', 'Ribbed collar & cuffs', 'Vibrant fast colors'],
+    image: '/gents_tshirt_black.jpg'
+  },
+  {
+    id: 'g-6',
+    name: 'SHORTS ',
+    price: '₹500 – ₹900/-',
+    sizes: '38, 40, 42, 44',
+    category: 'Shorts',
+    fabricType: 'Combed Pique Cotton',
+    description: 'Matte-finish pique cotton polo shirts and crew neck tees crafted with anti-pilling fabric.',
+    features: ['100% Combed pique cotton', 'Ribbed collar & cuffs', 'Vibrant fast colors'],
     image: '/hero_gents.jpg'
   },
   {
     id: 'g-7',
-    name: 'ATHLEISURE TRACK PANTS',
+    name: 'TRACK PANTS',
     price: '₹700 – ₹1,100/-',
     sizes: '30, 32, 34, 36, 38',
-    category: 'Athleisure Comfort Pants',
+    category: 'Track Pants',
     fabricType: 'Dry-Flex Spandex',
     description: 'Ultra-flexible track pants engineered with moisture-wicking tech for workout routines and everyday loungewear.',
     features: ['Zippered pockets', 'Elasticated ankle cuffs', '4-way flex weave'],
-    image: '/trouser_product.jpg'
+    image: '/gents_trackpants_grey.jpg'
   },
   {
     id: 'g-8',
-    name: 'PREMIUM INNERWEAR',
+    name: 'INNERWEAR',
     price: '₹199 – ₹699/-',
     sizes: 'S, M, L, XL, XXL',
     category: 'Vests, Briefs & Trunks',
     fabricType: 'Ultra-Soft Micro Modal',
     description: 'Soft combed cotton undershirts, trunks, and briefs ensuring skin-friendly comfort and shape retention.',
     features: ['Antibacterial finish', 'Microfiber elastic waistband', 'Tagless comfort'],
-    image: '/shirt_product.jpg'
+    image: '/gents_innerwear.jpg'
   },
   {
     id: 'g-9',
-    name: 'DESIGNER ROYAL WEDDING SUITS',
+    name: 'DESIGNER SUITS',
     price: '₹8,000 – ₹20,000/-',
     sizes: '36, 38, 40, 42, 44, 46',
     category: 'Wedding & Royal Tuxedos',
@@ -132,14 +143,14 @@ export const GENTS_PRODUCTS: Product[] = [
     fabricType: 'Superfine Italian Cut Wool Blend',
     description: 'Opulent 3-piece wedding suits and tuxedos adorned with satin lapels, fine inner lining, and regal cuts.',
     features: ['Includes Vest & Jacket', 'Premium Italian cut pattern', 'Hand-stitched detailing'],
-    image: '/suit_product.jpg'
+    image: '/gents_bandhgala_maroon.jpg'
   },
   {
     id: 'g-10',
-    name: 'EXECUTIVE 2-PIECE SUITS',
+    name: 'SUITS ',
     price: '₹3,000 – ₹12,000/-',
     sizes: '36, 38, 40, 42, 44, 46',
-    category: 'Executive 2-Piece Suits',
+    category: 'SUITS',
     badge: 'Corporate Choice',
     fabricType: 'Crease-Resistant Poly Wool',
     description: 'Crisp 2-piece suiting combinations ideal for boardroom presentations, corporate events, and formal dinners.',
@@ -148,14 +159,14 @@ export const GENTS_PRODUCTS: Product[] = [
   },
   {
     id: 'g-11',
-    name: 'TWEED & LINEN BLAZERS',
+    name: 'BLAZERS',
     price: '₹2,500 – ₹7,000/-',
     sizes: '36, 38, 40, 42, 44, 46',
-    category: 'Structured Tweed & Linen Blazers',
+    category: 'BLAZERS',
     fabricType: 'Structured Linen & Houndstooth',
     description: 'Structured smart blazers in houndstooth, solid linen, and subtle check motifs for semi-formal styling.',
     features: ['Lightweight shoulder padding', 'Contrast inner lining', 'Hand-pressed finish'],
-    image: '/suit_product.jpg'
+    image: '/gents_suit_olive.jpg'
   }
 ];
 
