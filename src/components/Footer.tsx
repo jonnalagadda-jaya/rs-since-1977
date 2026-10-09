@@ -10,6 +10,22 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ onSelectCategory, onOpenSizeGuide }) => {
+  const scrollToElement = (id: string, retries = 5) => {
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      } else if (retries > 0) {
+        scrollToElement(id, retries - 1);
+      }
+    }, 60);
+  };
+
+  const handleCategoryClick = (cat: CategoryFilter) => {
+    onSelectCategory(cat);
+    scrollToElement(cat);
+  };
+
   return (
     <footer className="bg-slate-950 text-slate-300 border-t border-slate-800 text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 space-y-12">
@@ -37,7 +53,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCategory, onOpenSizeGuid
             <ul className="space-y-2 text-slate-400">
               <li>
                 <button 
-                  onClick={() => onSelectCategory('gents')} 
+                  onClick={() => handleCategoryClick('gents')} 
                   className="hover:text-amber-300 flex items-center gap-1.5 transition-colors cursor-pointer"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-emerald-500" />
@@ -46,7 +62,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCategory, onOpenSizeGuid
               </li>
               <li>
                 <button 
-                  onClick={() => onSelectCategory('fabrics')} 
+                  onClick={() => handleCategoryClick('fabrics')} 
                   className="hover:text-amber-300 flex items-center gap-1.5 transition-colors cursor-pointer"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-emerald-500" />
@@ -55,7 +71,7 @@ export const Footer: React.FC<FooterProps> = ({ onSelectCategory, onOpenSizeGuid
               </li>
               <li>
                 <button 
-                  onClick={() => onSelectCategory('sarees')} 
+                  onClick={() => handleCategoryClick('sarees')} 
                   className="hover:text-amber-300 flex items-center gap-1.5 transition-colors cursor-pointer"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-emerald-500" />

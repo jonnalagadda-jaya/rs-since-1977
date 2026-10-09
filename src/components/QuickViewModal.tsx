@@ -54,17 +54,17 @@ export const QuickViewModal: React.FC<QuickViewModalProps> = ({ item, onClose, o
         </button>
 
         {/* Item Image Header Banner */}
-        <div className="relative h-56 rounded-2xl overflow-hidden bg-slate-100 border border-slate-200">
+        <div className="relative h-72 sm:h-96 rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 flex items-center justify-center p-2">
           <img
             src={item.image}
             alt={item.name}
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-contain"
             onError={(e) => {
               e.currentTarget.src = '/hero_fabrics.jpg';
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
-          <div className="absolute bottom-4 left-4 right-4 text-white space-y-1">
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent pointer-events-none" />
+          <div className="absolute bottom-4 left-4 right-4 text-white space-y-1 z-10">
             <span className="text-[10px] font-black uppercase tracking-wider bg-amber-400 text-slate-950 px-2.5 py-0.5 rounded-full inline-block">
               {isProduct ? (item as Product).category : isFabric ? (item as Fabric).type : (item as Saree).occasion}
             </span>

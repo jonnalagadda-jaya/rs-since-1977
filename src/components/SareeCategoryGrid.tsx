@@ -7,6 +7,22 @@ interface SareeCategoryGridProps {
 }
 
 export const SareeCategoryGrid: React.FC<SareeCategoryGridProps> = ({ onSelectCategory }) => {
+  const scrollToElement = (id: string, retries = 5) => {
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      } else if (retries > 0) {
+        scrollToElement(id, retries - 1);
+      }
+    }, 60);
+  };
+
+  const handleSareeSelect = () => {
+    onSelectCategory('sarees');
+    scrollToElement('sarees');
+  };
+
   const sareeCategories = [
     {
       title: 'PURE PATTU SAREES',
@@ -73,11 +89,7 @@ export const SareeCategoryGrid: React.FC<SareeCategoryGridProps> = ({ onSelectCa
           </div>
 
           <button
-            onClick={() => {
-              onSelectCategory('sarees');
-              const el = document.getElementById('sarees');
-              if (el) el.scrollIntoView({ behavior: 'smooth' });
-            }}
+            onClick={handleSareeSelect}
             className="text-xs font-bold text-[#004d28] bg-emerald-50 hover:bg-emerald-100 px-4 py-2 rounded-full border border-emerald-200 transition-colors self-start sm:self-auto cursor-pointer"
           >
             Explore All Sarees →
@@ -89,11 +101,7 @@ export const SareeCategoryGrid: React.FC<SareeCategoryGridProps> = ({ onSelectCa
           {sareeCategories.map((item, idx) => (
             <div
               key={idx}
-              onClick={() => {
-                onSelectCategory('sarees');
-                const el = document.getElementById('sarees');
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
-              }}
+              onClick={handleSareeSelect}
               className="flex flex-col items-center text-center group cursor-pointer space-y-2.5"
             >
               <div className="w-full aspect-square rounded-2xl overflow-hidden border border-slate-200 group-hover:border-[#004d28] shadow-xs group-hover:shadow-md transition-all duration-300 relative bg-slate-100">
