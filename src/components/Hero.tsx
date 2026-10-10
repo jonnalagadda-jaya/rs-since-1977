@@ -23,7 +23,7 @@ export const Hero: React.FC<HeroProps> = () => {
 
 
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-normal">
-              RSSINCE - 1977 The Complete Apparel & Textile Destination — Featuring <strong>Gents Readymades</strong>, <strong>Royal Silk Sarees</strong>, and <strong>Premium Unstitched Fabrics</strong>. Offering <strong>Custom Stitching</strong>, <strong>In-House Designers</strong>, and Bulk Uniform Solutions for <strong>Schools & Industrial Enterprises</strong>.
+              SINCE - 1977 we are serving the people of tirupati with great respect and reputation Complete Apparel & Textile Destination — Featuring <strong>Gents Readymades</strong>, <strong>Sarees</strong>, and <strong>Highlighting Premium Fabrics</strong>. We have good strength <strong>Custom Stitching</strong>, <strong>In-House Designers</strong>, and Bulk Uniform orders for <strong>Schools</strong>, <strong>Colleges</strong> & <strong>Industrial Enterprises</strong>.
             </p>
 
             {/* Business Service Quick Chips */}
@@ -112,7 +112,7 @@ export const Hero: React.FC<HeroProps> = () => {
               Our Complete Range of Services & Specializations
             </h2>
             <p className="text-xs sm:text-sm text-slate-600">
-              From family festive shopping to large-scale institutional uniform contracts
+              From family festive shopping to large-scale institutional uniform bulk orders.
             </p>
           </div>
 

@@ -102,7 +102,7 @@ export function App() {
                   GENTS READY MADES
                 </h2>
                 <p className="text-xs text-slate-500">
-                  Executive shirts, trousers, jeans, blazers, 2-piece & wedding tuxedos
+                  Executive shirts, trousers, jeans, blazers, 2-piece suits & wedding suits
                 </p>
               </div>
             </div>
